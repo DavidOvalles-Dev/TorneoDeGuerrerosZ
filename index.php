@@ -29,25 +29,31 @@ plantilla::aplicar();
                 <th>Foto</th>
                 <th>Nombre</th>
                 <th>Edad</th>
+                <th>Signo zodiacal</th>
+                <th>Habilidades</th>
                 <th>detalles</th>
             </tr>
         </thead>
         <div class="d-derecha">
-            <a class="boton" href="registro.php">Registrar participante</a>
+            <a class="boton" href="registro.php">➕Registrar participante</a>
+            <a class="boton" href="panel.php">📃Estadisticas</a>
         </div>
         <tbody>
             <?php
             $datos = listar_registros();
 
-            foreach ($datos as $dato) {
-                echo <<<HTML
+            foreach ($datos as $peleador) {
+                echo "
                 <tr>
-                    <td><img src="{$dato->foto}" alt="{$dato->nombre}" width=50px;></td>
-                    <td>{$dato->nombre} {$dato->apellido}</td>
-                    <td>{$dato->edad()}</td>
-                    <td><a href="detalles.php">etalles</a></td>
+                    <td><img src='{$peleador->foto}' alt='{$peleador->nombre}' width=50px;></td>
+                    <td>{$peleador->nombre} {$peleador->apellido}</td>
+                    <td>{$peleador->edad()}</td>
+                    <td>{$peleador->signo_zodiacal()}</td>
+                    <td>{$peleador->n_habilidades()}</td>
+
+                    <td><a class='detalles-button' href='registro.php?codigo={$peleador->id}'>Ver detalles</a></td>
                 </tr>
-                HTML;
+               ";
             }
             ?>
 

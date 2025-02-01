@@ -17,6 +17,13 @@ h1 {
   text-align: center;
   margin-top: 20px;
 }
+
+h3 {
+  color: #ffffff;
+  text-align: center;
+  margin: 50px 0 0 0;
+  font-size: 30px;
+}
 p {
   color: #ffffff;
   text-align: center;
@@ -73,10 +80,22 @@ tr:hover {
 
 .botonVolver {
   display: flex;
-  background-color: #f44336;
-  color: white;
-  padding: 14px 20px;
+  background-color: #f44336; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 30px; /* Ajuste del padding para hacerlo más grande */
   margin-top: 20px;
+  width: 25vw; /* 1/4 del ancho de la ventana (ancho de la pantalla) */
+  height: 3vw; /* Ajusta la altura para que sea cuadrado */
+  justify-content: center; /* Centra el texto dentro del botón */
+  align-items: center; /* Asegura que el contenido esté centrado verticalmente */
+  border-radius: 8px; /* Bordes redondeados */
+  text-align: center; /* Centra el texto */
+  cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+  transition: background-color 0.3s ease; /* Efecto al pasar el mouse */
+}
+
+.botonVolver:hover {
+  background-color: #d32f2f; /* Cambia color al pasar el mouse */
 }
 
 .creditos {
@@ -133,4 +152,45 @@ input[type="file"] {
   font-size: 16px;
   background-color: #ffffff;
   color: #000000;
+}
+
+.detalles-button {
+  padding: 10px 30px 10px 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+  text-decoration: none;
+  color: black;
+}
+
+.detalles-button:hover {
+  background-color: #d1c3c3;
+  border: 1px solid #d1c3c3;
+}
+
+.center {
+  text-align: center;
+}
+
+.botonRegistro {
+  background-color: #42b61f; /* Color de fondo verde */
+  color: white; /* Color del texto */
+  padding: 12px 30px; /* Padding más grande */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Puntero de mano */
+  border-radius: 25px; /* Bordes redondeados */
+  font-size: 18px; /* Tamaño de fuente */
+  text-align: center;
+  width: 100%; /* Ocupar todo el ancho disponible */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto de transición */
+}
+
+.botonRegistro:hover {
+  background-color: #34a312; /* Color de fondo al pasar el mouse */
+  transform: translateY(-3px); /* Eleva ligeramente el botón */
+}
+
+.botonRegistro:active {
+  background-color: #2d8c10; /* Color al hacer clic */
+  transform: translateY(0); /* Vuelve a su posición original */
 }

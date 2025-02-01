@@ -1,6 +1,6 @@
 <?php
 
-function my_input ($nombre, $label, $type= []) {
+function my_input ($nombre, $label,$valor, $type= []) {
 
     $tipo = 'text';
     $required = '';
@@ -9,9 +9,11 @@ function my_input ($nombre, $label, $type= []) {
 
     return <<<HTML
 <label class="label-input" for="$nombre">$label:</label><br>
-<input {$required} class="input" type="{$tipo}" name="{$nombre}" id="{$nombre}" ><br><br>
+<input {$required} class="input" type="{$tipo}" name="{$nombre}" value="{$valor}" id="{$nombre}" ><br><br>
 HTML;
 }
+
+
 
 
 function guardar_datos ($codigo, $datos) {
@@ -19,6 +21,7 @@ function guardar_datos ($codigo, $datos) {
     if(!is_dir('datos')) {
         mkdir('datos');
     }
+    
 
     file_put_contents("datos/{$codigo}.dat", serialize($datos));
 }
